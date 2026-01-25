@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Audvote',
+  title: 'audvote',
   description: 'A music review and rating platform',
 };
 
