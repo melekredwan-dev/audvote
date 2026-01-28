@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:18-alpine
+    container_name: audvote-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-audvote}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-audvote_dev}
+      POSTGRES_DB: ${POSTGRES_DB:-audvote}
+    ports:
+      - '5432:5432'
+    volumes:
+      - audvote-db-data:/var/lib/postgresql
+
+volumes:
+  audvote-db-data:
